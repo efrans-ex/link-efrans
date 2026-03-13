@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY SAYANG❤</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #d43f4f;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .marquee-container {
+            background: #fff0f3;
+            border: 3px solid #ff6b81;
+            border-radius: 50px;
+            padding: 15px 10px;
+            margin: 20px 0;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+        marquee {
+            font-size: 28px;
+            font-weight: bold;
+            color: #c44569;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        .message {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+        .heart {
+            color: #ff4d4d;
+            font-size: 24px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+        .audio-control {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .btn-play {
+            padding: 12px 30px;
+            background: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        .btn-play:hover {
+            background: #ff4757;
+        }
+        .btn-play:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .lyric-note {
+            font-size: 14px;
+            color: #555;
+            background: #fff9e6;
+            padding: 8px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        #player-status {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #d43f4f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖 Selamat Ulang Tahun, Sayang! 💖</h1>
+
+        <!-- Teks berjalan pertama -->
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left" scrollamount="5" loop="infinite">
+                🎂🎉 Selamat Ulang Tahun, DEDE ! 🎉🎂 Semoga panjang umur, sehat selalu, dan makin sayang sama aku! ❤️
+            </marquee>
+        </div>
+
+        <!-- Teks berjalan lirik "Make A Wish" -->
+        <div class="marquee-container">
+            <marquee behavior="alternate" direction="right" scrollamount="6" loop="infinite">
+                🎵 Make a wish, it's your birthday! 🎵 I can do this all day, make a wish! 🎵
+            </marquee>
+        </div>
+
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="right" scrollamount="7" loop="infinite">
+                🎵 You should make a wish, I'll take you anywhere 🎵 Soneul mattae make a wish! 🎵
+            </marquee>
+        </div>
+
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left" scrollamount="5" loop="infinite">
+                🎉 It's your birthday, it's your day! Make a wish! 🎉
+            </marquee>
+        </div>
+
+        <!-- Teks statis ucapan -->
+        <div class="message">
+            <p>Untuk pacarku tersayang,</p>
+            <p>Di hari spesialmu ini, aku ingin kamu tahu betapa berartinya dirimu bagiku. <span class="heart">❤️</span></p>
+            <p>Terima kasih telah hadir dan mewarnai hidupku. Semoga semua impianmu tercapai!</p>
+            <p><strong>I love you more than anything!</strong></p>
+        </div>
+
+        <!-- Teks berjalan CSS -->
+        <div style="margin-top: 30px; background: #ffeaa7; padding: 15px; border-radius: 30px;">
+            <p style="text-align: center; font-weight: bold;">🎈 HAPPY BIRTHDAY TO YOU 🎈</p>
+            <div style="overflow: hidden; white-space: nowrap; width: 100%;">
+                <div style="display: inline-block; animation: scroll-left 10s linear infinite; font-size: 22px; color: #e17055;">
+                    ❤ Selamat Ulang Tahun, Cintaku! ❤ Make a wish, semoga semua impianmu terkabul dan di beri umur panjang aminnnnn! ❤
+                </div>
+            </div>
+            <style>
+                @keyframes scroll-left {
+                    0% { transform: translateX(100%); }
+                    100% { transform: translateX(-100%); }
+                }
+            </style>
+        </div>
+
+        <!-- Bagian Audio: YouTube Player API -->
+        <div class="audio-control">
+            <button id="play-sound" class="btn-play">🎵 Putar Lagu 🎵</button>
+            <p class="lyric-note">Klik tombol di atas untuk mendengarkan lagu (hanya suara). Pastikan koneksi internet stabil.</p>
+            <div id="player-status"></div>
+        </div>
+
+        <!-- Tempat untuk YouTube Player (tersembunyi) -->
+        <div id="youtube-player" style="display: none;"></div>
+
+        <footer>
+            Dibuat dengan cinta khusus untuk Kamuuuu 💕
+        </footer>
+    </div>
+
+    <!-- Load YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+        var playerReady = false;
+        var playButton = document.getElementById('play-sound');
+        var statusDiv = document.getElementById('player-status');
+
+        // Fungsi ini dipanggil secara otomatis oleh YouTube API
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '0',
+                width: '0',
+                videoId: '1XWJRaLzKoE', // ID video dari lagu "Make A Wish - NCT U"
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'fs': 0,
+                    'modestbranding': 1,
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onError': onPlayerError
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            playerReady = true;
+            statusDiv.innerHTML = '✅ Lagu siap diputar.';
+            playButton.disabled = false;
+        }
+
+        function onPlayerError(event) {
+            playerReady = false;
+            statusDiv.innerHTML = '❌ Gagal memuat lagu. Mungkin video tidak tersedia. Coba lagi nanti.';
+            playButton.disabled = true;
+        }
+
+        playButton.addEventListener('click', function() {
+            if (playerReady) {
+                player.playVideo();
+                statusDiv.innerHTML = '🎶 Lagu sedang diputar... (hanya suara)';
+            } else {
+                statusDiv.innerHTML = '⏳ Player belum siap, coba lagi.';
+            }
+        });
+    </script>
+</body>
+</html>
